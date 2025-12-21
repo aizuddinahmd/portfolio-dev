@@ -1,54 +1,87 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { ArrowRight, Code, Globe, Layout } from 'lucide-react';
-import Link from 'next/link';
+import React from "react";
+import { Code, ExternalLink } from "lucide-react";
+import Link from "next/link";
 
 const projects = [
   {
-    id: '0',
-    title: 'E-Commerce Platform',
-    text: 'A full-featured online store built with Next.js, Stripe, and Tailwind CSS. Features include cart management, user authentication, and payment processing.',
-    icon: Globe,
-    backgroundUrl: '/assets/benefits/card-1.svg', // Placeholder
-    light: true,
+    id: "0",
+    title: "SyncVerse | AI-Powered Roadmap & Career Navigator",
+    description:
+      "Web platform that helps students and developers generate personalized tech roadmaps and guidance.",
+    category: "AI / DATA",
+    technologies: ["TypeScript", "React", "Vite", "Tailwind CSS", "shadcn/ui"],
+    moreTechnologies: 5,
+    features: [
+      "Goal-based roadmap generation for different tech stacks (web, AI, DSA, etc.)",
+      "Step-by-step structured paths with milestones and checkpoints",
+      "Clean, modern UI using shadcn/ui and Aceternity components",
+    ],
+    categoryTag: "AI",
+    liveDemoUrl: "#",
+    codeUrl: "#",
   },
   {
-    id: '1',
-    title: 'Task Management App',
-    text: 'A productivity tool for teams to track progress and manage tasks. Real-time updates using Socket.io and a drag-and-drop interface.',
-    icon: Layout,
-    backgroundUrl: '/assets/benefits/card-2.svg', // Placeholder
-    light: false,
+    id: "1",
+    title: "E-Commerce Platform",
+    description:
+      "A full-featured online store built with Next.js, Stripe, and Tailwind CSS. Features include cart management, user authentication, and payment processing.",
+    category: "WEB / E-COMMERCE",
+    technologies: ["Next.js", "Tailwind CSS", "Stripe", "PostgreSQL"],
+    moreTechnologies: 3,
+    features: [
+      "Cart management and user authentication",
+      "Secure payment processing with Stripe",
+      "Responsive design with modern UI components",
+    ],
+    categoryTag: "WEB",
+    liveDemoUrl: "#",
+    codeUrl: "#",
   },
   {
-    id: '2',
-    title: 'AI Content Generator',
-    text: 'An application that uses OpenAI API to generate blog posts and social media content. Includes a rich text editor and SEO optimization tools.',
-    icon: Code,
-    backgroundUrl: '/assets/benefits/card-3.svg', // Placeholder
-    light: true,
+    id: "2",
+    title: "Task Management App",
+    description:
+      "A productivity tool for teams to track progress and manage tasks. Real-time updates using Socket.io and a drag-and-drop interface.",
+    category: "WEB / PRODUCTIVITY",
+    technologies: ["React", "Tailwind CSS", "Socket.io", "PostgreSQL"],
+    moreTechnologies: 2,
+    features: [
+      "Real-time updates using Socket.io",
+      "Drag-and-drop interface for task management",
+      "Team collaboration features",
+    ],
+    categoryTag: "PRODUCTIVITY",
+    liveDemoUrl: "#",
+    codeUrl: "#",
   },
 ];
 
-import Heading from './Heading';
+import Heading from "./Heading";
 
-const Section = ({ className, id, children }: { className?: string; id?: string; children: React.ReactNode }) => {
+const Section = ({
+  className,
+  id,
+  children,
+}: {
+  className?: string;
+  id?: string;
+  children: React.ReactNode;
+}) => {
   return (
-    <section id={id} className={`relative py-10 lg:py-16 xl:py-20 ${className || ''}`}>
+    <section
+      id={id}
+      className={`relative py-10 lg:py-16 xl:py-20 ${className || ""}`}
+    >
       {children}
     </section>
   );
 };
 
-const Arrow = () => (
-  <ArrowRight className="ml-auto w-6 h-6 transition-transform group-hover:translate-x-1" />
-);
-
 const FeaturedProjects = () => {
   return (
     <Section id="projects" className="bg-black text-white">
-   
       <div className="container mx-auto px-4 relative z-2">
         <Heading
           className="md:max-w-md lg:max-w-2xl"
@@ -56,33 +89,80 @@ const FeaturedProjects = () => {
           title="Featured Projects"
         />
 
-        <div className="flex flex-wrap gap-10 mb-10 justify-center">
+        <div className="flex flex-wrap gap-6 mb-10 justify-center">
           {projects.map((item) => (
             <div
-              className="block group relative p-0.5 bg-no-repeat bg-[length:100%_100%] md:max-w-[24rem] w-full"
+              className="block group relative w-full max-w-[600px] rounded-2xl bg-gray-900/90 backdrop-blur-sm border border-white/10 p-8 transition-all hover:border-white/20"
               key={item.id}
             >
-              {/* Gradient Border Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl -z-10" />
-              
-              <div className="relative z-2 flex flex-col min-h-[22rem] p-[2.4rem] bg-gray-900/90 rounded-[23px] backdrop-blur-sm border border-white/5 h-full transition-colors hover:bg-gray-900">
-                <h5 className="text-xl font-bold mb-5">{item.title}</h5>
-                <p className="text-gray-400 text-sm leading-6 mb-6">{item.text}</p>
-                <div className="flex items-center mt-auto">
-                  <div className="p-2 bg-white/5 rounded-lg">
-                    <item.icon size={24} className="text-white" />
-                  </div>
-                  <Link href="#" className="ml-auto font-mono text-xs font-bold text-white uppercase tracking-wider hover:underline flex items-center gap-2 group">
-                    Explore more
-                    <Arrow />
-                  </Link>
+              {/* Header Section */}
+              <div className="flex items-start justify-between mb-4">
+                <h3 className="text-2xl font-bold text-white pr-4 flex-1">
+                  {item.title}
+                </h3>
+                <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full border border-white/20 shrink-0">
+                  <Code className="w-4 h-4" />
+                  <span className="text-xs font-medium">{item.category}</span>
                 </div>
               </div>
 
-              {/* Decorative background glow if light is true */}
-              {item.light && (
-                <div className="absolute top-0 left-1/4 w-full h-full bg-gradient-to-b from-blue-500/10 to-transparent blur-3xl -z-20 pointer-events-none" />
-              )}
+              {/* Description */}
+              <p className="text-gray-400 text-sm leading-6 mb-6">
+                {item.description}
+              </p>
+
+              {/* Technology Stack */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {item.technologies.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-white border border-white/10"
+                  >
+                    {tech}
+                  </span>
+                ))}
+                {item.moreTechnologies > 0 && (
+                  <span className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-white border border-white/10">
+                    +{item.moreTechnologies} more
+                  </span>
+                )}
+              </div>
+
+              {/* Features Section */}
+              <ul className="space-y-2 mb-6">
+                {item.features.map((feature, index) => (
+                  <li
+                    key={index}
+                    className="text-sm text-gray-300 flex items-start"
+                  >
+                    <span className="text-white mr-2">•</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {/* Footer Section */}
+              <div className="flex items-center justify-between mt-6 pt-6 border-t border-white/10">
+                <span className="text-xs text-gray-400 uppercase tracking-wider">
+                  {item.categoryTag}
+                </span>
+                <div className="flex items-center gap-4">
+                  <Link
+                    href={item.liveDemoUrl}
+                    className="text-sm text-white hover:text-gray-300 transition-colors flex items-center gap-1.5"
+                  >
+                    Live Demo
+                    <ExternalLink className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    href={item.codeUrl}
+                    className="text-sm text-white hover:text-gray-300 transition-colors flex items-center gap-1.5"
+                  >
+                    Code
+                    <ExternalLink className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
             </div>
           ))}
         </div>
