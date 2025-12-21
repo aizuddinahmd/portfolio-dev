@@ -35,14 +35,7 @@ const projects = [
   },
 ];
 
-const Heading = ({ className, title, tag }: { className?: string; title: string; tag?: string }) => {
-  return (
-    <div className={`${className} max-w-[50rem] mx-auto mb-12 lg:mb-20 text-center`}>
-      {tag && <div className="mb-4 font-mono text-sm font-bold tracking-wider text-gray-500 uppercase">{tag}</div>}
-      {title && <h2 className="h2 text-3xl md:text-4xl lg:text-5xl font-bold">{title}</h2>}
-    </div>
-  );
-};
+import Heading from './Heading';
 
 const Section = ({ className, id, children }: { className?: string; id?: string; children: React.ReactNode }) => {
   return (

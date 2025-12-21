@@ -66,7 +66,8 @@ export default function Hero() {
         </div>
         
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-teal-400 animate-gradient-x">
+          {/* <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-purple-500 to-teal-400 animate-gradient-x"> */}
+          <span className="bg-clip-text text-gray-400">
             Aizuddin
           </span>
         </h1>
