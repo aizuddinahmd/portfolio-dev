@@ -4,10 +4,6 @@ import React from 'react';
 import { ArrowRight, Code, Globe, Layout } from 'lucide-react';
 import Link from 'next/link';
 
-  
-
-
-// Mock data based on the structure
 const projects = [
   {
     id: '0',
