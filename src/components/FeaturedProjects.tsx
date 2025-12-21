@@ -89,10 +89,10 @@ const FeaturedProjects = () => {
           title="Featured Projects"
         />
 
-        <div className="flex flex-wrap gap-6 mb-10 justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {projects.map((item) => (
             <div
-              className="block group relative w-full max-w-[600px] rounded-2xl bg-gray-900/90 backdrop-blur-sm border border-white/10 p-8 transition-all hover:border-white/20"
+              className="block group relative w-full rounded-2xl bg-gray-900/90 backdrop-blur-sm border border-white/10 p-8 transition-all hover:border-white/20"
               key={item.id}
             >
               {/* Header Section */}
