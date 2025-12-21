@@ -8,8 +8,8 @@ export default function Home() {
     <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
       <Hero />
       <FeaturedProjects />
-      <Experience />
       <Skills />
+      <Experience />
     </div>
   );
 }
