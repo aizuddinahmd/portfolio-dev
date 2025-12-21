@@ -92,7 +92,7 @@ const FeaturedProjects = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {projects.map((item) => (
             <div
-              className="block group relative w-full rounded-2xl bg-gray-900/90 backdrop-blur-sm border border-white/10 p-8 transition-all hover:border-white/20"
+              className="block group relative w-full rounded-2xl bg-transparent backdrop-blur-sm border border-white/10 p-8 transition-all hover:border-white/20"
               key={item.id}
             >
               {/* Header Section */}
@@ -100,10 +100,10 @@ const FeaturedProjects = () => {
                 <h3 className="text-2xl font-bold text-white pr-4 flex-1">
                   {item.title}
                 </h3>
-                <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full border border-white/20 shrink-0">
+                {/* <div className="flex items-center gap-2 px-3 py-1.5 bg-white/10 rounded-full border border-white/20 shrink-0">
                   <Code className="w-4 h-4" />
                   <span className="text-xs font-medium">{item.category}</span>
-                </div>
+                </div> */}
               </div>
 
               {/* Description */}
@@ -129,7 +129,7 @@ const FeaturedProjects = () => {
               </div>
 
               {/* Features Section */}
-              <ul className="space-y-2 mb-6">
+              {/* <ul className="space-y-2 mb-6">
                 {item.features.map((feature, index) => (
                   <li
                     key={index}
@@ -139,7 +139,7 @@ const FeaturedProjects = () => {
                     <span>{feature}</span>
                   </li>
                 ))}
-              </ul>
+              </ul> */}
 
               {/* Footer Section */}
               <div className="flex items-center justify-between mt-6 pt-6 border-t border-white/10">
