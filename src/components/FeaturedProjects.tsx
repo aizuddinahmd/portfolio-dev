@@ -7,54 +7,94 @@ import Link from "next/link";
 const projects = [
   {
     id: "0",
-    title: "SyncVerse | AI-Powered Roadmap & Career Navigator",
+    title: "Klinik Dr Twins",
     description:
-      "Web platform that helps students and developers generate personalized tech roadmaps and guidance.",
-    category: "AI / DATA",
-    technologies: ["TypeScript", "React", "Vite", "Tailwind CSS", "shadcn/ui"],
-    moreTechnologies: 5,
-    features: [
-      "Goal-based roadmap generation for different tech stacks (web, AI, DSA, etc.)",
-      "Step-by-step structured paths with milestones and checkpoints",
-      "Clean, modern UI using shadcn/ui and Aceternity components",
-    ],
-    categoryTag: "AI",
-    liveDemoUrl: "#",
-    codeUrl: "#",
+      "Website for Klinik Dr Twins, a clinic that provides medical services to patients.",
+    category: "WEB / CLINIC",
+    technologies: ["Next.js", "Tailwind CSS", "React", "Node.js"],
+    moreTechnologies: 0,
+    features: [],
+    categoryTag: "CLINIC",
+    liveDemoUrl: "https://klinikdrtwins.my",
+    codeUrl: "https://github.com/aizuddinahmd/klinikdrtwins",
   },
   {
     id: "1",
-    title: "E-Commerce Platform",
+    title: "The Wellnest Admin Dashboard",
     description:
-      "A full-featured online store built with Next.js, Stripe, and Tailwind CSS. Features include cart management, user authentication, and payment processing.",
-    category: "WEB / E-COMMERCE",
-    technologies: ["Next.js", "Tailwind CSS", "Stripe", "PostgreSQL"],
-    moreTechnologies: 3,
-    features: [
-      "Cart management and user authentication",
-      "Secure payment processing with Stripe",
-      "Responsive design with modern UI components",
-    ],
-    categoryTag: "WEB",
-    liveDemoUrl: "#",
-    codeUrl: "#",
+      "Admin dashboard for The Wellnest, a wellnest centre that provides services for facial, skin, and body treatments. Features include appointment scheduling, patient management, and inventory management.",
+    category: "WEB / CLINIC",
+    technologies: ["Next.js", "Tailwind CSS", "React", "Node.js"],
+    moreTechnologies: 0,
+    features: [],
+    categoryTag: "ADMIN DASHBOARD",
+    liveDemoUrl: "https://the-wellnest-admin.vercel.app/",
+    codeUrl: "https://github.com/aizuddinahmd/the-wellnest-admin",
   },
   {
     id: "2",
-    title: "Task Management App",
+    title: "MYND Portal",
     description:
-      "A productivity tool for teams to track progress and manage tasks. Real-time updates using Socket.io and a drag-and-drop interface.",
-    category: "WEB / PRODUCTIVITY",
-    technologies: ["React", "Tailwind CSS", "Socket.io", "PostgreSQL"],
+      "A community building platforn for the tech community in Malaysia. Features include event management tools, learning management system, and a forum for the community to discuss and share their ideas.",
+    category: "WEB / COMMUNITY",
+    technologies: ["Next.js", "Supabase", "Node.js", "PostgreSQL"],
     moreTechnologies: 2,
-    features: [
-      "Real-time updates using Socket.io",
-      "Drag-and-drop interface for task management",
-      "Team collaboration features",
-    ],
-    categoryTag: "PRODUCTIVITY",
-    liveDemoUrl: "#",
-    codeUrl: "#",
+    features: [],
+    categoryTag: "COMMUNITY",
+    liveDemoUrl: "https://skolalab-educhain.vercel.app/",
+    codeUrl: "https://github.com/aizuddinahmd/skolalab-educhain",
+  },
+  {
+    id: "3",
+    title: "SkolaLab Website",
+    description:
+      "Official website for Skola Lab Technologies, a community that provides blockchain education to students and professionals.",
+    category: "WEB / COMMUNITY",
+    technologies: ["Vite.js", "Tailwind CSS", "React", "TypeScript"],
+    moreTechnologies: 0,
+    features: [],
+    categoryTag: "EDUCATION",
+    liveDemoUrl: "https://skolalab-landingpage.vercel.app/",
+    codeUrl: "https://github.com/aizuddinahmd/skolalab-landingpage",
+  },
+  {
+    id: "4",
+    title: "EUFT Website",
+    description:
+      "Website for football game called EUFT (European Football Tournament)",
+    category: "WEB / COMMUNITY",
+    technologies: ["Vite.js", "TypeScript"],
+    moreTechnologies: 0,
+    features: [],
+    categoryTag: "COMMUNITY",
+    liveDemoUrl: "https://euft-amber.vercel.app/",
+    codeUrl: "https://github.com/aizuddinahmd/euft",
+  },
+  {
+    id: "5",
+    title: "TMR Games Website",
+    description:
+      "Website for TMR Games, a company that provides games for the public.",
+    category: "WEB / COMMUNITY",
+    technologies: ["Vite.js", "TypeScript"],
+    moreTechnologies: 0,
+    features: [],
+    categoryTag: "COMMUNITY",
+    liveDemoUrl: "https://tmr-games.vercel.app/",
+    codeUrl: "https://github.com/aizuddinahmd/tmr-games",
+  },
+  {
+    id: "6",
+    title: "LMS Platform",
+    description:
+      "LMS platform for Skola Labs to provide blockchain education to students and professionals.",
+    category: "WEB / COMMUNITY",
+    technologies: ["Next.js", "Tailwind CSS", "React", "Node.js"],
+    moreTechnologies: 0,
+    features: [],
+    categoryTag: "EDUCATION",
+    liveDemoUrl: "https://kampus-sekolah-kripto.vercel.app/",
+    codeUrl: "https://github.com/aizuddinahmd/eduhub-kampus",
   },
 ];
 
@@ -92,7 +132,7 @@ const FeaturedProjects = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {projects.map((item) => (
             <div
-              className="block group relative w-full rounded-2xl bg-transparent backdrop-blur-sm border border-white/10 p-8 transition-all hover:border-white/20"
+              className="block group relative w-full rounded-2xl bg-transparent backdrop-blur-sm border border-white/10 p-8 transition-all hover:border-white/20 cursor-pointer"
               key={item.id}
             >
               {/* Header Section */}
