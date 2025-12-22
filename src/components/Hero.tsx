@@ -4,11 +4,14 @@ import React, { useEffect, useState } from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import Aurora from "./Aurora";
-import Header from "./Header";
 
 export default function Hero() {
   const [text, setText] = useState("");
-  const fullText = "Frontend Developer";
+  const fullText = [
+    "Frontend Developer",
+    "Backend Developer",
+    "Blockchain Developer",
+  ];
   const [isTyping, setIsTyping] = useState(true);
 
   useEffect(() => {

@@ -66,7 +66,7 @@ const projects = [
     technologies: ["Vite.js", "TypeScript"],
     moreTechnologies: 0,
     features: [],
-    categoryTag: "COMMUNITY",
+    categoryTag: "WEBSITE",
     liveDemoUrl: "https://euft-amber.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/euft",
   },
@@ -79,7 +79,7 @@ const projects = [
     technologies: ["Vite.js", "TypeScript"],
     moreTechnologies: 0,
     features: [],
-    categoryTag: "COMMUNITY",
+    categoryTag: "WEBSITE",
     liveDemoUrl: "https://tmr-games.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/tmr-games",
   },
@@ -95,6 +95,19 @@ const projects = [
     categoryTag: "EDUCATION",
     liveDemoUrl: "https://kampus-sekolah-kripto.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/eduhub-kampus",
+  },
+  {
+    id: "7",
+    title: "TWN by Dr Twins",
+    description:
+      "Website for TWN by Dr Twins, a wellnest center that provides services for facial, skin and body. They also provides pilates classes and become a women's hub",
+    category: "WEB / COMMUNITY",
+    technologies: ["Next.js", "Tailwind CSS", "React", "Node.js"],
+    moreTechnologies: 0,
+    features: [],
+    categoryTag: "WEBSITE",
+    liveDemoUrl: "https://www.thewellnest-bdt.my/",
+    codeUrl: "https://github.com/aizuddinahmd/the-wellnest",
   },
 ];
 
