@@ -7,6 +7,16 @@ import Image from "next/image";
 import Header from "@/components/Header";
 import Heading from "@/components/Heading";
 
+// Import project images
+import klinikDrtwins from "@/assets/projects/klinik-drtwins.png";
+import thewellnestAdmin from "@/assets/projects/thewellnest-admin.png";
+import myndPlatform from "@/assets/projects/MYND-platform.png";
+import skolalabs from "@/assets/projects/skolalabs.png";
+import euftWebsite from "@/assets/projects/euft-website.png";
+import tmrGames from "@/assets/projects/tmr-games.png";
+import lmsPlatform from "@/assets/projects/lms-platform.png";
+import theWellnest from "@/assets/projects/the-wellnest.png";
+
 const projects = [
   {
     id: "0",
@@ -20,7 +30,7 @@ const projects = [
     categoryTag: "CLINIC",
     liveDemoUrl: "https://klinikdrtwins.my",
     codeUrl: "https://github.com/aizuddinahmd/klinikdrtwins",
-    imageUrl: "./assets/projects/klinik-drtwins.png",
+    image: klinikDrtwins,
   },
   {
     id: "1",
@@ -34,7 +44,7 @@ const projects = [
     categoryTag: "ADMIN DASHBOARD",
     liveDemoUrl: "https://the-wellnest-admin.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/the-wellnest-admin",
-    imageUrl: "/assets/projects/thewellnest-admin.png",
+    image: thewellnestAdmin,
   },
   {
     id: "2",
@@ -48,7 +58,7 @@ const projects = [
     categoryTag: "COMMUNITY",
     liveDemoUrl: "https://skolalab-educhain.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/skolalab-educhain",
-    imageUrl: "/images/projects/MYND-platform.png",
+    image: myndPlatform,
   },
   {
     id: "3",
@@ -62,7 +72,7 @@ const projects = [
     categoryTag: "EDUCATION",
     liveDemoUrl: "https://skolalab-landingpage.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/skolalab-landingpage",
-    imageUrl: "/images/projects/skolalab.png",
+    image: skolalabs,
   },
   {
     id: "4",
@@ -76,7 +86,7 @@ const projects = [
     categoryTag: "WEBSITE",
     liveDemoUrl: "https://euft-amber.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/euft",
-    imageUrl: "/images/projects/euft-website.png",
+    image: euftWebsite,
   },
   {
     id: "5",
@@ -90,7 +100,7 @@ const projects = [
     categoryTag: "WEBSITE",
     liveDemoUrl: "https://tmr-games.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/tmr-games",
-    imageUrl: "/images/projects/tmr-games.png",
+    image: tmrGames,
   },
   {
     id: "6",
@@ -104,7 +114,7 @@ const projects = [
     categoryTag: "EDUCATION",
     liveDemoUrl: "https://kampus-sekolah-kripto.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/eduhub-kampus",
-    imageUrl: "/images/projects/lms-platform.png",
+    image: lmsPlatform,
   },
   {
     id: "7",
@@ -118,7 +128,7 @@ const projects = [
     categoryTag: "WEBSITE",
     liveDemoUrl: "https://www.thewellnest-bdt.my/",
     codeUrl: "https://github.com/aizuddinahmd/the-wellnest",
-    imageUrl: "/images/projects/the-wellnest.png",
+    image: theWellnest,
   },
 ];
 
@@ -154,7 +164,7 @@ const ProjectsPage = () => {
                 {/* Project Image */}
                 <div className="relative w-full h-48 overflow-hidden bg-gray-900">
                   <Image
-                    src={project.imageUrl}
+                    src={project.image}
                     alt={project.title}
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
