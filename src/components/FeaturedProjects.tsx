@@ -101,7 +101,7 @@ const projects = [
     categoryTag: "EDUCATION",
     liveDemoUrl: "https://kampus-sekolah-kripto.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/eduhub-kampus",
-    imageUrl: "/images/projects/lms-platform.png",
+    imageUrl: "/assets/projects/lms-platform.png",
   },
   {
     id: "7",
