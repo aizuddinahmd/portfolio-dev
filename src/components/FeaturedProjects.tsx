@@ -153,7 +153,7 @@ const FeaturedProjects = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {projects.map((item) => (
             <div
-              className="block group relative w-full rounded-2xl bg-transparent backdrop-blur-sm border border-white/10 p-8 transition-all hover:border-white/20 cursor-pointer"
+              className="block group relative w-full rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-8 transition-all hover:border-white/20 cursor-pointer"
               key={item.id}
             >
               {/* Header Section */}

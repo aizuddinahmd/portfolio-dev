@@ -83,8 +83,7 @@ const ServiceCard = ({ service }: { service: (typeof services)[0] }) => {
       className="relative border border-white/10 rounded-3xl overflow-hidden group transition-transform duration-300 hover:scale-[1.02] min-h-[400px]"
     >
       <Effect {...data.pattern} mouseX={mouseX} mouseY={mouseY} />
-      <div className="absolute inset-0 bg-black"></div>
-      <div className="absolute inset-0 flex flex-col justify-end p-8 bg-gradient-to-b from-black/0 to-black/90 lg:p-15">
+      <div className="absolute inset-0 flex flex-col justify-end p-8 bg-black/80 lg:p-15">
         <h4 className="text-2xl lg:text-3xl font-bold mb-4">{service.title}</h4>
         <p className="text-gray-300 text-base mb-6">{service.text}</p>
         <ul className="space-y-2">

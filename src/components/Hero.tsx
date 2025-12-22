@@ -50,7 +50,7 @@ export default function Hero() {
       {/* <Header /> */}
       {/* Starry Background */}
       <div className="absolute inset-0 z-0">
-        <Aurora />
+        <Aurora amplitude={3} />
         <div className="stars absolute inset-0 bg-[radial-gradient(2px_2px_at_20px_30px,#eee,rgba(0,0,0,0)),radial-gradient(2px_2px_at_40px_70px,#fff,rgba(0,0,0,0)),radial-gradient(2px_2px_at_50px_160px,#ddd,rgba(0,0,0,0)),radial-gradient(2px_2px_at_90px_40px,#fff,rgba(0,0,0,0)),radial-gradient(2px_2px_at_130px_80px,#fff,rgba(0,0,0,0)),radial-gradient(2px_2px_at_160px_120px,#ddd,rgba(0,0,0,0))] bg-[length:200px_200px] opacity-50 animate-pulse" />
         <div className="stars-2 absolute inset-0 bg-[radial-gradient(1px_1px_at_10px_10px,#fff,rgba(0,0,0,0)),radial-gradient(1px_1px_at_150px_150px,#eee,rgba(0,0,0,0))] bg-[length:300px_300px] opacity-30 animate-pulse delay-75" />
       </div>
