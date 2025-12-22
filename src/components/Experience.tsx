@@ -1,39 +1,56 @@
 "use client";
 
 import React from "react";
-import { Briefcase, Calendar, MapPin } from "lucide-react";
+import { Briefcase } from "lucide-react";
 import Heading from "./Heading";
 
 const experiences = [
   {
     id: "0",
-    title: "Senior Frontend Developer",
-    company: "Tech Innovations Inc.",
-    location: "San Francisco, CA",
-    period: "2022 - Present",
-    description:
-      "Led frontend development for multiple client projects using React, Next.js, and TypeScript. Collaborated with cross-functional teams to deliver scalable web applications.",
-    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    title: "Technical Director (Software & AI)",
+    company: "Skola Labs Tech Sdn Bhd",
+    location: "Malaysia",
+    period: "March 2025 - Ongoing",
+    responsibilities: [
+      "Designed and delivered website and system architecture for a healthcare clinic, covering UX, frontend, and backend integration",
+      "Built and managed backend systems using PostgreSQL and Supabase, including auth, role-based access, and data modelling",
+      "Integrated AI agents, automation workflows, and third-party APIs",
+    ],
   },
   {
     id: "1",
-    title: "Frontend Developer",
-    company: "Digital Solutions LLC",
-    location: "Remote",
-    period: "2020 - 2022",
-    description:
-      "Developed and maintained responsive web applications. Implemented modern UI/UX designs and optimized application performance.",
-    technologies: ["React", "JavaScript", "CSS", "Node.js"],
+    title: "Trust & Safety Associate (Korean Speaker)",
+    company: "Accenture",
+    location: "Malaysia",
+    period: "June 2024 - Feb 2025",
+    responsibilities: [
+      "Reviewed, classified and removed over 1,000 pieces of user-generated content weekly based on client-specific guidelines, ensuring community safety and platform compliance",
+      "Monitored and adapted to frequent updates in client policies using internal moderation tools, maintaining 98% accuracy in content decisions",
+      "Analyzed digital content trends and flagged potential risks, providing actionable insights that led to improvements in AI moderation systems and reduced harmful content exposure by 20%",
+    ],
   },
   {
     id: "2",
-    title: "Junior Web Developer",
-    company: "StartupHub",
-    location: "New York, NY",
-    period: "2019 - 2020",
-    description:
-      "Built interactive web interfaces and collaborated with designers to implement pixel-perfect designs. Gained experience in modern web development practices.",
-    technologies: ["HTML", "CSS", "JavaScript", "Vue.js"],
+    title: "Software Developer (Part-Time)",
+    company: "Epic Startups",
+    location: "Malaysia",
+    period: "April 2023 - May 2024",
+    responsibilities: [
+      "Collaborated closely with UI/UX designers to develop front-end functionalities and design elements for web applications, ensuring a seamless and intuitive user experience",
+      "Implemented responsive designs and optimized website performance across various devices and screen sizes",
+      "Worked on fixing bugs and resolving issues in existing applications, contributing to the stability and functionality of the software",
+      "Assisted in the development of new features and functionalities, including user authentication, data visualization, and interactive components",
+    ],
+  },
+  {
+    id: "3",
+    title: "AI Content Moderator (Korean Speaker)",
+    company: "Tech Mahindra",
+    location: "Malaysia",
+    period: "April 2023 - May 2024",
+    responsibilities: [
+      "Reviewed and analyzed user-generated content in Korean language to ensure alignment with platform policies, maintaining a 98% compliance rate on Google Gemini",
+    ],
   },
 ];
 
@@ -72,7 +89,7 @@ const Experience = () => {
             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-white/10 hidden md:block" />
 
             <div className="space-y-12">
-              {experiences.map((item, index) => (
+              {experiences.map((item) => (
                 <div key={item.id} className="relative flex gap-6 md:gap-8">
                   {/* Timeline dot */}
                   <div className="hidden md:flex items-start pt-1">
@@ -84,42 +101,27 @@ const Experience = () => {
                   {/* Content */}
                   <div className="flex-1 pb-12 md:pb-0">
                     <div className="rounded-2xl bg-transparent backdrop-blur-sm border border-white/10 p-6 md:p-8 transition-all hover:border-white/20">
-                      <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-4">
-                        <div className="mb-3 md:mb-0">
-                          <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
-                            {item.title}
-                          </h3>
-                          <p className="text-lg text-gray-300 mb-2">
-                            {item.company}
-                          </p>
-                        </div>
-                        <div className="flex flex-col gap-2 text-sm text-gray-400">
-                          <div className="flex items-center gap-2">
-                            <Calendar className="w-4 h-4" />
-                            <span>{item.period}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <MapPin className="w-4 h-4" />
-                            <span>{item.location}</span>
-                          </div>
-                        </div>
+                      <div className="mb-4">
+                        <h3 className="text-xl md:text-2xl font-bold text-white mb-2">
+                          {item.title}
+                        </h3>
+                        <p className="text-base text-gray-300 mb-2">
+                          {item.company} | {item.location} | {item.period}
+                        </p>
                       </div>
 
-                      <p className="text-gray-400 text-sm leading-6 mb-4">
-                        {item.description}
-                      </p>
-
-                      {/* Technologies */}
-                      <div className="flex flex-wrap gap-2 mt-4">
-                        {item.technologies.map((tech) => (
-                          <span
-                            key={tech}
-                            className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-white border border-white/10"
+                      {/* Responsibilities */}
+                      <ul className="space-y-2 mt-4">
+                        {item.responsibilities.map((responsibility, idx) => (
+                          <li
+                            key={idx}
+                            className="text-gray-400 text-sm leading-6 flex items-start"
                           >
-                            {tech}
-                          </span>
+                            <span className="text-white mr-3 mt-1.5">•</span>
+                            <span>{responsibility}</span>
+                          </li>
                         ))}
-                      </div>
+                      </ul>
                     </div>
                   </div>
                 </div>
