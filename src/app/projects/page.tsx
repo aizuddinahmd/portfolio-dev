@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
@@ -177,7 +177,7 @@ const ProjectsPage = () => {
           />
 
           {/* Projects List */}
-          <div className="flex flex-col gap-8 max-w-7xl mx-auto">
+          <div className="flex flex-col gap-8 max-w-6xl mx-auto">
             {projects.map((project) => (
               <div
                 key={project.id}
@@ -188,18 +188,18 @@ const ProjectsPage = () => {
                   <div className="flex-1 p-8 lg:p-12 flex flex-col justify-between">
                     {/* Title */}
                     <div className="mb-6">
-                      <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
+                      <h3 className="text-2xl lg:text-2xl font-bold text-white mb-6 leading-tight">
                         {project.title}
                       </h3>
 
                       {/* Description */}
-                      <p className="text-white text-base lg:text-lg leading-7 max-w-2xl">
+                      <p className="text-white text-sm lg:text-base leading-7 max-w-2xl">
                         {project.description}
                       </p>
                     </div>
 
                     {/* Metadata */}
-                    <div className="flex flex-wrap gap-8 lg:gap-12 mt-auto pt-6">
+                    {/* <div className="flex flex-wrap gap-8 lg:gap-12 mt-auto pt-6">
                       <div className="flex flex-col">
                         <span className="text-2xl lg:text-3xl font-bold text-blue-400 mb-1">
                           {project.country}
@@ -221,16 +221,52 @@ const ProjectsPage = () => {
                         <span className="text-sm text-white">Years</span>
                       </div>
                     </div>
+                  </div> */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-white border border-white/10"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {project.moreTechnologies > 0 && (
+                        <span className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-white border border-white/10">
+                          +{project.moreTechnologies} more
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex items-center justify-between mt-6 pt-6 border-t border-white/10">
+                      <span className="text-xs text-gray-400 uppercase tracking-wider">
+                        {project.categoryTag}
+                      </span>
+                      <div className="flex items-center gap-4">
+                        <Link
+                          href={project.liveDemoUrl}
+                          className="text-sm text-white hover:text-gray-300 transition-colors flex items-center gap-1.5"
+                        >
+                          Live Demo
+                          <ExternalLink className="w-4 h-4" />
+                        </Link>
+                        <Link
+                          href={project.codeUrl}
+                          className="text-sm text-white hover:text-gray-300 transition-colors flex items-center gap-1.5"
+                        >
+                          Code
+                          <ExternalLink className="w-4 h-4" />
+                        </Link>
+                      </div>
+                    </div>
                   </div>
-
                   {/* Right Section - Project Image */}
-                  <div className="relative w-full lg:w-[600px] xl:w-[700px] h-80 lg:h-auto lg:min-h-[500px] overflow-hidden bg-gray-900 shrink-0">
+                  <div className="relative w-full lg:w-[500px] xl:w-[600px] m-6 rounded-xl h-80 lg:h-auto lg:min-h-[400px] overflow-hidden bg-gray-900 shrink-0">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 1024px) 100vw, 700px"
+                      sizes="(max-width: 1024px) 100vw, 500px"
                     />
                   </div>
                 </div>
