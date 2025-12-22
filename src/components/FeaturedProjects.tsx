@@ -17,6 +17,7 @@ const projects = [
     categoryTag: "CLINIC",
     liveDemoUrl: "https://klinikdrtwins.my",
     codeUrl: "https://github.com/aizuddinahmd/klinikdrtwins",
+    imageUrl: "/images/projects/klinikdrtwins.png",
   },
   {
     id: "1",
@@ -30,6 +31,7 @@ const projects = [
     categoryTag: "ADMIN DASHBOARD",
     liveDemoUrl: "https://the-wellnest-admin.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/the-wellnest-admin",
+    imageUrl: "/images/projects/thewellnest-admin.png",
   },
   {
     id: "2",
@@ -43,6 +45,7 @@ const projects = [
     categoryTag: "COMMUNITY",
     liveDemoUrl: "https://skolalab-educhain.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/skolalab-educhain",
+    imageUrl: "/images/projects/MYND-platform.png",
   },
   {
     id: "3",
@@ -56,6 +59,7 @@ const projects = [
     categoryTag: "EDUCATION",
     liveDemoUrl: "https://skolalab-landingpage.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/skolalab-landingpage",
+    imageUrl: "/images/projects/skolalab.png",
   },
   {
     id: "4",
@@ -69,6 +73,7 @@ const projects = [
     categoryTag: "WEBSITE",
     liveDemoUrl: "https://euft-amber.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/euft",
+    imageUrl: "/images/projects/euft-website.png",
   },
   {
     id: "5",
@@ -82,6 +87,7 @@ const projects = [
     categoryTag: "WEBSITE",
     liveDemoUrl: "https://tmr-games.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/tmr-games",
+    imageUrl: "/images/projects/tmr-games.png",
   },
   {
     id: "6",
@@ -95,6 +101,7 @@ const projects = [
     categoryTag: "EDUCATION",
     liveDemoUrl: "https://kampus-sekolah-kripto.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/eduhub-kampus",
+    imageUrl: "/images/projects/lms-platform.png",
   },
   {
     id: "7",
@@ -108,6 +115,7 @@ const projects = [
     categoryTag: "WEBSITE",
     liveDemoUrl: "https://www.thewellnest-bdt.my/",
     codeUrl: "https://github.com/aizuddinahmd/the-wellnest",
+    imageUrl: "/images/projects/the-wellnest.png",
   },
 ];
 
