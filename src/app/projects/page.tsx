@@ -1,13 +1,11 @@
 "use client";
 
 import React from "react";
-import { ExternalLink, Code, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Heading from "@/components/Heading";
-
-// Import project images
 import klinikDrtwins from "@/assets/projects/klinik-drtwins.png";
 import thewellnestAdmin from "@/assets/projects/thewellnest-admin.png";
 import myndPlatform from "@/assets/projects/MYND-platform.png";
@@ -22,7 +20,7 @@ const projects = [
     id: "0",
     title: "Klinik Dr Twins",
     description:
-      "Website for Klinik Dr Twins, a clinic that provides medical services to patients.",
+      "Website for Klinik Dr Twins, a clinic that provides medical services to patients. A comprehensive healthcare platform designed to streamline patient management and improve accessibility to medical services.",
     category: "WEB / CLINIC",
     technologies: ["Next.js", "Tailwind CSS", "React", "Node.js"],
     moreTechnologies: 0,
@@ -31,6 +29,9 @@ const projects = [
     liveDemoUrl: "https://klinikdrtwins.my",
     codeUrl: "https://github.com/aizuddinahmd/klinikdrtwins",
     image: klinikDrtwins,
+    country: "Malaysia",
+    timeOfWorking: "3 months",
+    year: "2024",
   },
   {
     id: "1",
@@ -45,12 +46,15 @@ const projects = [
     liveDemoUrl: "https://the-wellnest-admin.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/the-wellnest-admin",
     image: thewellnestAdmin,
+    country: "Malaysia",
+    timeOfWorking: "4 months",
+    year: "2024",
   },
   {
     id: "2",
     title: "MYND Portal",
     description:
-      "A community building platforn for the tech community in Malaysia. Features include event management tools, learning management system, and a forum for the community to discuss and share their ideas.",
+      "A community building platform for the tech community in Malaysia. Features include event management tools, learning management system, and a forum for the community to discuss and share their ideas.",
     category: "WEB / COMMUNITY",
     technologies: ["Next.js", "Supabase", "Node.js", "PostgreSQL"],
     moreTechnologies: 2,
@@ -59,12 +63,15 @@ const projects = [
     liveDemoUrl: "https://skolalab-educhain.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/skolalab-educhain",
     image: myndPlatform,
+    country: "Malaysia",
+    timeOfWorking: "6 months",
+    year: "2024",
   },
   {
     id: "3",
     title: "SkolaLab Website",
     description:
-      "Official website for Skola Lab Technologies, a community that provides blockchain education to students and professionals.",
+      "Official website for Skola Lab Technologies, a community that provides blockchain education to students and professionals. A modern and engaging platform showcasing educational resources and community initiatives.",
     category: "WEB / COMMUNITY",
     technologies: ["Vite.js", "Tailwind CSS", "React", "TypeScript"],
     moreTechnologies: 0,
@@ -73,12 +80,15 @@ const projects = [
     liveDemoUrl: "https://skolalab-landingpage.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/skolalab-landingpage",
     image: skolalabs,
+    country: "Malaysia",
+    timeOfWorking: "2 months",
+    year: "2024",
   },
   {
     id: "4",
     title: "EUFT Website",
     description:
-      "Website for football game called EUFT (European Football Tournament)",
+      "Website for football game called EUFT (European Football Tournament). An interactive platform designed to engage football enthusiasts with tournament information, live updates, and community features.",
     category: "WEB / COMMUNITY",
     technologies: ["Vite.js", "TypeScript"],
     moreTechnologies: 0,
@@ -87,12 +97,15 @@ const projects = [
     liveDemoUrl: "https://euft-amber.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/euft",
     image: euftWebsite,
+    country: "Malaysia",
+    timeOfWorking: "1 month",
+    year: "2024",
   },
   {
     id: "5",
     title: "TMR Games Website",
     description:
-      "Website for TMR Games, a company that provides games for the public.",
+      "Website for TMR Games, a company that provides games for the public. A vibrant and engaging platform showcasing game offerings and providing an interactive experience for gaming enthusiasts.",
     category: "WEB / COMMUNITY",
     technologies: ["Vite.js", "TypeScript"],
     moreTechnologies: 0,
@@ -101,12 +114,15 @@ const projects = [
     liveDemoUrl: "https://tmr-games.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/tmr-games",
     image: tmrGames,
+    country: "Malaysia",
+    timeOfWorking: "1 month",
+    year: "2024",
   },
   {
     id: "6",
     title: "LMS Platform",
     description:
-      "LMS platform for Skola Labs to provide blockchain education to students and professionals.",
+      "LMS platform for Skola Labs to provide blockchain education to students and professionals. A comprehensive learning management system with course management, progress tracking, and interactive learning tools.",
     category: "WEB / COMMUNITY",
     technologies: ["Next.js", "Tailwind CSS", "React", "Node.js"],
     moreTechnologies: 0,
@@ -115,12 +131,15 @@ const projects = [
     liveDemoUrl: "https://kampus-sekolah-kripto.vercel.app/",
     codeUrl: "https://github.com/aizuddinahmd/eduhub-kampus",
     image: lmsPlatform,
+    country: "Malaysia",
+    timeOfWorking: "5 months",
+    year: "2024",
   },
   {
     id: "7",
     title: "TWN by Dr Twins",
     description:
-      "Website for TWN by Dr Twins, a wellnest center that provides services for facial, skin and body. They also provides pilates classes and become a women's hub",
+      "Website for TWN by Dr Twins, a wellnest center that provides services for facial, skin and body. They also provides pilates classes and become a women's hub. A comprehensive platform showcasing wellness services and community programs.",
     category: "WEB / COMMUNITY",
     technologies: ["Next.js", "Tailwind CSS", "React", "Node.js"],
     moreTechnologies: 0,
@@ -129,6 +148,9 @@ const projects = [
     liveDemoUrl: "https://www.thewellnest-bdt.my/",
     codeUrl: "https://github.com/aizuddinahmd/the-wellnest",
     image: theWellnest,
+    country: "Malaysia",
+    timeOfWorking: "3 months",
+    year: "2024",
   },
 ];
 
@@ -155,83 +177,61 @@ const ProjectsPage = () => {
           />
 
           {/* Projects List */}
-          <div className="flex flex-col gap-6 max-w-6xl mx-auto">
+          <div className="flex flex-col gap-8 max-w-7xl mx-auto">
             {projects.map((project) => (
               <div
                 key={project.id}
-                className="group relative rounded-2xl bg-transparent backdrop-blur-sm border border-white/10 overflow-hidden transition-all hover:border-white/20 hover:shadow-lg hover:shadow-blue-500/10"
+                className="group relative rounded-3xl bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 border border-white/10 overflow-hidden transition-all hover:border-white/20"
               >
-                <div className="flex flex-col md:flex-row">
-                  {/* Project Image */}
-                  <div className="relative w-full md:w-80 lg:w-96 h-64 md:h-auto overflow-hidden bg-gray-900 shrink-0">
+                <div className="flex flex-col lg:flex-row">
+                  {/* Left Section - Text Content */}
+                  <div className="flex-1 p-8 lg:p-12 flex flex-col justify-between">
+                    {/* Title */}
+                    <div className="mb-6">
+                      <h3 className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
+                        {project.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-white text-base lg:text-lg leading-7 max-w-2xl">
+                        {project.description}
+                      </p>
+                    </div>
+
+                    {/* Metadata */}
+                    <div className="flex flex-wrap gap-8 lg:gap-12 mt-auto pt-6">
+                      <div className="flex flex-col">
+                        <span className="text-2xl lg:text-3xl font-bold text-blue-400 mb-1">
+                          {project.country}
+                        </span>
+                        <span className="text-sm text-white">Country</span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-2xl lg:text-3xl font-bold text-blue-400 mb-1">
+                          {project.timeOfWorking}
+                        </span>
+                        <span className="text-sm text-white">
+                          Time of working
+                        </span>
+                      </div>
+                      <div className="flex flex-col">
+                        <span className="text-2xl lg:text-3xl font-bold text-blue-400 mb-1">
+                          {project.year}
+                        </span>
+                        <span className="text-sm text-white">Years</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Section - Project Image */}
+                  <div className="relative w-full lg:w-[600px] xl:w-[700px] h-80 lg:h-auto lg:min-h-[500px] overflow-hidden bg-gray-900 shrink-0">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, 384px"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 1024px) 100vw, 700px"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent md:hidden" />
-                    <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-black/20 to-transparent hidden md:block" />
-                  </div>
-
-                  {/* Project Content */}
-                  <div className="flex-1 p-6 md:p-8 flex flex-col">
-                    {/* Category Tag */}
-                    <div className="mb-3">
-                      <span className="text-xs text-gray-400 uppercase tracking-wider">
-                        {project.categoryTag}
-                      </span>
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                      {project.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-gray-400 text-base leading-7 mb-6 flex-1">
-                      {project.description}
-                    </p>
-
-                    {/* Technologies */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-white border border-white/10"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                      {project.moreTechnologies > 0 && (
-                        <span className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-white border border-white/10">
-                          +{project.moreTechnologies} more
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Links */}
-                    <div className="flex items-center gap-6 pt-4 border-t border-white/10">
-                      <Link
-                        href={project.liveDemoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm font-medium text-white hover:text-blue-400 transition-colors"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                        Live Demo
-                      </Link>
-                      <Link
-                        href={project.codeUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm font-medium text-white hover:text-blue-400 transition-colors"
-                      >
-                        <Code className="w-4 h-4" />
-                        Code
-                      </Link>
-                    </div>
                   </div>
                 </div>
               </div>
