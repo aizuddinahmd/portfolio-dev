@@ -5,22 +5,25 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import Aurora from "./Aurora";
 
+const fullText = [
+  "Frontend Developer",
+  "Backend Developer",
+  "Blockchain Developer",
+];
+
 export default function Hero() {
   const [text, setText] = useState("");
-  const fullText = [
-    "Frontend Developer",
-    "Backend Developer",
-    "Blockchain Developer",
-  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isTyping, setIsTyping] = useState(true);
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
+    const currentFullText = fullText[currentIndex];
 
     if (isTyping) {
-      if (text.length < fullText.length) {
+      if (text.length < currentFullText.length) {
         timeout = setTimeout(() => {
-          setText(fullText.slice(0, text.length + 1));
+          setText(currentFullText.slice(0, text.length + 1));
         }, 100);
       } else {
         timeout = setTimeout(() => setIsTyping(false), 2000);
@@ -28,15 +31,19 @@ export default function Hero() {
     } else {
       if (text.length > 0) {
         timeout = setTimeout(() => {
-          setText(fullText.slice(0, text.length - 1));
+          setText(currentFullText.slice(0, text.length - 1));
         }, 50);
       } else {
-        timeout = setTimeout(() => setIsTyping(true), 500);
+        timeout = setTimeout(() => {
+          const nextIndex = (currentIndex + 1) % fullText.length;
+          setCurrentIndex(nextIndex);
+          setIsTyping(true);
+        }, 500);
       }
     }
 
     return () => clearTimeout(timeout);
-  }, [text, isTyping]);
+  }, [text, isTyping, currentIndex]);
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-[#0a0a0a] text-white flex items-center justify-center">
