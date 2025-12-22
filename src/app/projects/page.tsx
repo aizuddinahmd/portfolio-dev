@@ -154,81 +154,84 @@ const ProjectsPage = () => {
             text="A collection of my recent work and projects"
           />
 
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Projects List */}
+          <div className="flex flex-col gap-6 max-w-6xl mx-auto">
             {projects.map((project) => (
               <div
                 key={project.id}
                 className="group relative rounded-2xl bg-transparent backdrop-blur-sm border border-white/10 overflow-hidden transition-all hover:border-white/20 hover:shadow-lg hover:shadow-blue-500/10"
               >
-                {/* Project Image */}
-                <div className="relative w-full h-48 overflow-hidden bg-gray-900">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                </div>
-
-                {/* Project Content */}
-                <div className="p-6">
-                  {/* Category Tag */}
-                  <div className="mb-3">
-                    <span className="text-xs text-gray-400 uppercase tracking-wider">
-                      {project.categoryTag}
-                    </span>
+                <div className="flex flex-col md:flex-row">
+                  {/* Project Image */}
+                  <div className="relative w-full md:w-80 lg:w-96 h-64 md:h-auto overflow-hidden bg-gray-900 shrink-0">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 384px"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent md:hidden" />
+                    <div className="absolute inset-0 bg-gradient-to-l from-black/60 via-black/20 to-transparent hidden md:block" />
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">
-                    {project.title}
-                  </h3>
+                  {/* Project Content */}
+                  <div className="flex-1 p-6 md:p-8 flex flex-col">
+                    {/* Category Tag */}
+                    <div className="mb-3">
+                      <span className="text-xs text-gray-400 uppercase tracking-wider">
+                        {project.categoryTag}
+                      </span>
+                    </div>
 
-                  {/* Description */}
-                  <p className="text-gray-400 text-sm leading-6 mb-4 line-clamp-3">
-                    {project.description}
-                  </p>
+                    {/* Title */}
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+                      {project.title}
+                    </h3>
 
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.slice(0, 3).map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-white border border-white/10"
+                    {/* Description */}
+                    <p className="text-gray-400 text-base leading-7 mb-6 flex-1">
+                      {project.description}
+                    </p>
+
+                    {/* Technologies */}
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-white border border-white/10"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                      {project.moreTechnologies > 0 && (
+                        <span className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-white border border-white/10">
+                          +{project.moreTechnologies} more
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Links */}
+                    <div className="flex items-center gap-6 pt-4 border-t border-white/10">
+                      <Link
+                        href={project.liveDemoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm font-medium text-white hover:text-blue-400 transition-colors"
                       >
-                        {tech}
-                      </span>
-                    ))}
-                    {project.technologies.length > 3 && (
-                      <span className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-white border border-white/10">
-                        +{project.technologies.length - 3} more
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Links */}
-                  <div className="flex items-center gap-4 pt-4 border-t border-white/10">
-                    <Link
-                      href={project.liveDemoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-white hover:text-blue-400 transition-colors"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      Live Demo
-                    </Link>
-                    <Link
-                      href={project.codeUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-white hover:text-blue-400 transition-colors"
-                    >
-                      <Code className="w-4 h-4" />
-                      Code
-                    </Link>
+                        <ExternalLink className="w-4 h-4" />
+                        Live Demo
+                      </Link>
+                      <Link
+                        href={project.codeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm font-medium text-white hover:text-blue-400 transition-colors"
+                      >
+                        <Code className="w-4 h-4" />
+                        Code
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
