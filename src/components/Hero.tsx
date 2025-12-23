@@ -58,21 +58,21 @@ export default function Hero() {
       {/* Social Sidebar */}
       <div className="fixed left-8 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-6 hidden md:flex">
         <Link
-          href="https://github.com"
+          href="https://github.com/aizuddinahmd"
           target="_blank"
           className="p-3 bg-gray-800/50 rounded-full hover:bg-blue-600/20 hover:text-blue-400 transition-all border border-gray-700 hover:border-blue-500/50"
         >
           <Github size={20} />
         </Link>
         <Link
-          href="https://linkedin.com"
+          href="https://www.linkedin.com/in/ahmad-aizuddin-613467150/"
           target="_blank"
           className="p-3 bg-gray-800/50 rounded-full hover:bg-blue-600/20 hover:text-blue-400 transition-all border border-gray-700 hover:border-blue-500/50"
         >
           <Linkedin size={20} />
         </Link>
         <Link
-          href="mailto:email@example.com"
+          href="mailto:aizuddinahmd0408@gmail.com"
           className="p-3 bg-gray-800/50 rounded-full hover:bg-blue-600/20 hover:text-blue-400 transition-all border border-gray-700 hover:border-blue-500/50"
         >
           <Mail size={20} />
