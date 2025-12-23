@@ -169,7 +169,7 @@ function Effect({
     <div className="pointer-events-none">
       <div className="absolute inset-0 rounded-2xl transition duration-300 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50"></div>
       <motion.div
-        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#D7EDEA] to-[#F4FBDF] opacity-0 transition duration-300 group-hover:opacity-100 dark:from-[#202D2E] dark:to-[#303428]"
+        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#4c7275] to-[#50563b] opacity-0 transition duration-300 group-hover:opacity-60 dark:from-[#0f1516] dark:to-[#181a14]"
         style={style}
       />
       <motion.div
@@ -211,10 +211,10 @@ const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
   return (
     <div
       onMouseMove={onMouseMove}
-      className="group relative rounded-3xl bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 border border-white/10 overflow-hidden transition-all hover:border-white/20"
+      className="group relative rounded-3xl bg-black border border-white/10 overflow-hidden transition-all hover:border-white/20"
     >
       <Effect {...data.pattern} mouseX={mouseX} mouseY={mouseY} />
-      <div className="flex flex-col lg:flex-row relative z-10">
+      <div className="flex flex-col lg:flex-row relative z-10 ">
         {/* Left Section - Text Content */}
         <div className="flex-1 p-8 lg:p-12 flex flex-col justify-between">
           {/* Title */}
@@ -293,15 +293,6 @@ const ProjectsPage = () => {
       <Header />
       <section className="relative py-20 lg:py-24 xl:py-28 pt-32">
         <div className="container mx-auto px-4 relative z-2">
-          {/* Back Button */}
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>Back to Home</span>
-          </Link>
-
           <Heading
             className="md:max-w-md lg:max-w-2xl mb-16"
             tag="Portfolio"
