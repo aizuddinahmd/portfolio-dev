@@ -6,6 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Heading from "@/components/Heading";
+import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import klinikDrtwins from "@/assets/projects/klinik-drtwins.png";
 import thewellnestAdmin from "@/assets/projects/thewellnest-admin.png";
 import myndPlatform from "@/assets/projects/MYND-platform.png";
@@ -154,12 +155,153 @@ const projects = [
   },
 ];
 
+function Effect({
+  mouseX,
+  mouseY,
+}: {
+  mouseX: ReturnType<typeof useMotionValue<number>>;
+  mouseY: ReturnType<typeof useMotionValue<number>>;
+}) {
+  const maskImage = useMotionTemplate`radial-gradient(300px at ${mouseX}px ${mouseY}px, white, transparent)`;
+  const style = { maskImage, WebkitMaskImage: maskImage };
+
+  return (
+    <div className="pointer-events-none">
+      <div className="absolute inset-0 rounded-2xl transition duration-300 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50"></div>
+      <motion.div
+        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#D7EDEA] to-[#F4FBDF] opacity-0 transition duration-300 group-hover:opacity-100 dark:from-[#202D2E] dark:to-[#303428]"
+        style={style}
+      />
+      <motion.div
+        className="absolute inset-0 rounded-2xl opacity-0 mix-blend-overlay transition duration-300 group-hover:opacity-100"
+        style={style}
+      />
+    </div>
+  );
+}
+
+const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const data = {
+    pattern: {
+      y: 16,
+      squares: [
+        [0, 1],
+        [1, 3],
+      ],
+    },
+  };
+
+  function onMouseMove({
+    currentTarget,
+    clientX,
+    clientY,
+  }: {
+    currentTarget: HTMLElement;
+    clientX: number;
+    clientY: number;
+  }) {
+    const { left, top } = currentTarget.getBoundingClientRect();
+    mouseX.set(clientX - left);
+    mouseY.set(clientY - top);
+  }
+
+  return (
+    <div
+      onMouseMove={onMouseMove}
+      className="group relative rounded-3xl bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 border border-white/10 overflow-hidden transition-all hover:border-white/20"
+    >
+      <Effect {...data.pattern} mouseX={mouseX} mouseY={mouseY} />
+      <div className="flex flex-col lg:flex-row relative z-10">
+        {/* Left Section - Text Content */}
+        <div className="flex-1 p-8 lg:p-12 flex flex-col justify-between">
+          {/* Title */}
+          <div className="mb-6">
+            <h3 className="text-2xl lg:text-2xl font-bold text-white mb-6 leading-tight">
+              {project.title}
+            </h3>
+
+            {/* Description */}
+            <p className="text-white text-sm lg:text-base leading-7 max-w-2xl">
+              {project.description}
+            </p>
+          </div>
+
+          {/* Technologies */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            {project.technologies.map((tech) => (
+              <span
+                key={tech}
+                className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-white border border-white/10"
+              >
+                {tech}
+              </span>
+            ))}
+            {project.moreTechnologies > 0 && (
+              <span className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-white border border-white/10">
+                +{project.moreTechnologies} more
+              </span>
+            )}
+          </div>
+          {/* Links */}
+          <div className="flex items-center justify-between mt-6 pt-6 border-t border-white/10">
+            <span className="text-xs text-gray-400 uppercase tracking-wider">
+              {project.categoryTag}
+            </span>
+            <div className="flex items-center gap-4">
+              <Link
+                href={project.liveDemoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-white hover:text-gray-300 transition-colors flex items-center gap-1.5"
+              >
+                Live Demo
+                <ExternalLink className="w-4 h-4" />
+              </Link>
+              <Link
+                href={project.codeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-white hover:text-gray-300 transition-colors flex items-center gap-1.5"
+              >
+                Code
+                <ExternalLink className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+        {/* Right Section - Project Image */}
+        <div className="relative w-full lg:w-[500px] xl:w-[600px] m-6 rounded-xl h-80 lg:h-auto lg:min-h-[400px] overflow-hidden bg-gray-900 shrink-0">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 1024px) 100vw, 500px"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const ProjectsPage = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       <Header />
       <section className="relative py-20 lg:py-24 xl:py-28 pt-32">
         <div className="container mx-auto px-4 relative z-2">
+          {/* Back Button */}
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Back to Home</span>
+          </Link>
+
           <Heading
             className="md:max-w-md lg:max-w-2xl mb-16"
             tag="Portfolio"
@@ -170,98 +312,7 @@ const ProjectsPage = () => {
           {/* Projects List */}
           <div className="flex flex-col gap-8 max-w-6xl mx-auto">
             {projects.map((project) => (
-              <div
-                key={project.id}
-                className="group relative rounded-3xl bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 border border-white/10 overflow-hidden transition-all hover:border-white/20"
-              >
-                <div className="flex flex-col lg:flex-row">
-                  {/* Left Section - Text Content */}
-                  <div className="flex-1 p-8 lg:p-12 flex flex-col justify-between">
-                    {/* Title */}
-                    <div className="mb-6">
-                      <h3 className="text-2xl lg:text-2xl font-bold text-white mb-6 leading-tight">
-                        {project.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="text-white text-sm lg:text-base leading-7 max-w-2xl">
-                        {project.description}
-                      </p>
-                    </div>
-
-                    {/* Metadata */}
-                    {/* <div className="flex flex-wrap gap-8 lg:gap-12 mt-auto pt-6">
-                      <div className="flex flex-col">
-                        <span className="text-2xl lg:text-3xl font-bold text-blue-400 mb-1">
-                          {project.country}
-                        </span>
-                        <span className="text-sm text-white">Country</span>
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-2xl lg:text-3xl font-bold text-blue-400 mb-1">
-                          {project.timeOfWorking}
-                        </span>
-                        <span className="text-sm text-white">
-                          Time of working
-                        </span>
-                      </div>
-                      <div className="flex flex-col">
-                        <span className="text-2xl lg:text-3xl font-bold text-blue-400 mb-1">
-                          {project.year}
-                        </span>
-                        <span className="text-sm text-white">Years</span>
-                      </div>
-                    </div>
-                  </div> */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-white border border-white/10"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                      {project.moreTechnologies > 0 && (
-                        <span className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-white border border-white/10">
-                          +{project.moreTechnologies} more
-                        </span>
-                      )}
-                    </div>
-                    <div className="flex items-center justify-between mt-6 pt-6 border-t border-white/10">
-                      <span className="text-xs text-gray-400 uppercase tracking-wider">
-                        {project.categoryTag}
-                      </span>
-                      <div className="flex items-center gap-4">
-                        <Link
-                          href={project.liveDemoUrl}
-                          className="text-sm text-white hover:text-gray-300 transition-colors flex items-center gap-1.5"
-                        >
-                          Live Demo
-                          <ExternalLink className="w-4 h-4" />
-                        </Link>
-                        <Link
-                          href={project.codeUrl}
-                          className="text-sm text-white hover:text-gray-300 transition-colors flex items-center gap-1.5"
-                        >
-                          Code
-                          <ExternalLink className="w-4 h-4" />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Right Section - Project Image */}
-                  <div className="relative w-full lg:w-[500px] xl:w-[600px] m-6 rounded-xl h-80 lg:h-auto lg:min-h-[400px] overflow-hidden bg-gray-900 shrink-0">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 1024px) 100vw, 500px"
-                    />
-                  </div>
-                </div>
-              </div>
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         </div>
