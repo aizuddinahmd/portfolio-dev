@@ -6,7 +6,7 @@ import {
   Palette,
   TrendingUp,
   Globe,
-  Heart,
+  //   Heart,
   Award,
   GraduationCap,
   Calendar,
@@ -16,7 +16,7 @@ import Header from "@/components/Header";
 import Heading from "@/components/Heading";
 import { motion } from "framer-motion";
 import Aurora from "@/components/Aurora";
-import Experience from "@/components/Experience";
+// import Experience from "@/components/Experience";
 
 const AboutPage = () => {
   const aboutSections = [
@@ -247,7 +247,7 @@ const AboutPage = () => {
             </motion.div>
           </div> */}
           {/* Experience section */}
-          <Experience />
+          {/* <Experience /> */}
 
           {/* Certificates Section */}
           <div className="max-w-4xl mx-auto mb-20">

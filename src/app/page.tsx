@@ -7,7 +7,7 @@ import Services from "@/components/Services";
 
 export default function Home() {
   return (
-    <div className="min-h-screen font-[family-name:var(--font-geist-sans)]">
+    <div className="min-h-screen font-[family-name:var(--font-geist-sans)] bg-black">
       <Hero />
       <Services />
       {/* <Features /> */}
