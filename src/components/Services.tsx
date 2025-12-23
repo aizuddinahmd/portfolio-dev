@@ -2,7 +2,7 @@
 
 import React from "react";
 import Heading from "./Heading";
-import { services, serviceIcons } from "@/constants/services";
+import { services } from "@/constants/services";
 import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 
 const Section = ({
@@ -87,7 +87,7 @@ const ServiceCard = ({ service }: { service: (typeof services)[0] }) => {
         <h4 className="text-2xl lg:text-3xl font-bold mb-4">{service.title}</h4>
         <p className="text-gray-300 text-base mb-6">{service.text}</p>
         <ul className="space-y-2">
-          {service.features.slice(0, 3).map((feature, idx) => (
+          {service.features.slice(0, 4).map((feature, idx) => (
             <li key={idx} className="flex items-center text-sm text-gray-300">
               <span className="mr-2">•</span>
               {feature}
@@ -114,18 +114,12 @@ const Services = () => {
         <div className="relative">
           <div className="relative z-1 grid gap-5 lg:grid-cols-2 mb-5">
             {services.slice(0, 2).map((service) => {
-              const icon = serviceIcons.find((icon) => icon.id === service.id);
-              return (
-                <ServiceCard key={service.id} service={service} icon={icon} />
-              );
+              return <ServiceCard key={service.id} service={service} />;
             })}
           </div>
           <div className="relative z-1 grid gap-5 lg:grid-cols-2">
             {services.slice(2, 4).map((service) => {
-              const icon = serviceIcons.find((icon) => icon.id === service.id);
-              return (
-                <ServiceCard key={service.id} service={service} icon={icon} />
-              );
+              return <ServiceCard key={service.id} service={service} />;
             })}
           </div>
         </div>

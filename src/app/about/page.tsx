@@ -1,18 +1,12 @@
 "use client";
 
 import React from "react";
-import {
-  ArrowLeft,
-  Code,
-  Palette,
-  TrendingUp,
-  Globe,
-  Heart,
-} from "lucide-react";
+import { Code, Palette, TrendingUp, Globe, Heart } from "lucide-react";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Heading from "@/components/Heading";
 import { motion } from "framer-motion";
+import Aurora from "@/components/Aurora";
 
 const AboutPage = () => {
   const aboutSections = [
@@ -52,9 +46,16 @@ const AboutPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white relative overflow-hidden">
+      {/* Starry Background */}
+      <div className="fixed inset-0 z-0">
+        <Aurora amplitude={3} />
+        <div className="stars absolute inset-0 bg-[radial-gradient(2px_2px_at_20px_30px,#fff,rgba(0,0,0,0)),radial-gradient(2px_2px_at_40px_70px,#fff,rgba(0,0,0,0)),radial-gradient(2px_2px_at_50px_160px,#eee,rgba(0,0,0,0)),radial-gradient(2px_2px_at_90px_40px,#fff,rgba(0,0,0,0)),radial-gradient(2px_2px_at_130px_80px,#fff,rgba(0,0,0,0)),radial-gradient(2px_2px_at_160px_120px,#ddd,rgba(0,0,0,0))] bg-[length:200px_200px] opacity-50 animate-pulse" />
+        <div className="stars-2 absolute inset-0 bg-[radial-gradient(1px_1px_at_10px_10px,#fff,rgba(0,0,0,0)),radial-gradient(1px_1px_at_150px_150px,#eee,rgba(0,0,0,0))] bg-[length:300px_300px] opacity-30 animate-pulse delay-75" />
+      </div>
+
       <Header />
-      <section className="relative py-20 lg:py-24 xl:py-28 pt-32">
+      <section className="relative py-20 lg:py-24 xl:py-28 pt-32 z-10">
         <div className="container mx-auto px-4 relative z-2">
           {/* Hero Section */}
           <div className="max-w-4xl mx-auto mb-20">
@@ -72,20 +73,19 @@ const AboutPage = () => {
 
               <div className="mt-12 space-y-6">
                 <p className="text-lg text-gray-300 leading-8">
-                  I'm a passionate developer and designer with a diverse
+                  I&apos;m a passionate developer and designer with a diverse
                   background spanning full-stack development, product design,
                   and growth strategy. Currently serving as Technical Director
                   at Skola Labs Tech, where I lead software and AI initiatives.
                 </p>
                 <p className="text-lg text-gray-300 leading-8">
-                  My journey in tech has taken me through various roles—from
-                  building responsive web applications and managing backend
-                  systems to content moderation and community building. I thrive
-                  on solving complex problems and creating solutions that make a
-                  real impact.
+                  My experience spans full-stack development, system
+                  integration, and automation, working across multiple
+                  stakeholders to deliver reliable, secure, and maintainable
+                  platforms.
                 </p>
                 <p className="text-lg text-gray-300 leading-8">
-                  When I'm not coding, I'm exploring new technologies,
+                  When I&apos;m not coding, I&apos;m exploring new technologies,
                   contributing to open-source projects, or sharing knowledge
                   with the developer community. I believe in continuous learning
                   and staying curious about the ever-evolving world of
@@ -251,10 +251,12 @@ const AboutPage = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="rounded-2xl bg-gradient-to-br from-gray-900 to-gray-800 border border-white/10 p-12"
             >
-              <h2 className="text-3xl font-bold mb-4">Let's Work Together</h2>
+              <h2 className="text-3xl font-bold mb-4">
+                Let&apos;s Work Together
+              </h2>
               <p className="text-gray-400 mb-8 text-lg">
-                I'm always open to discussing new projects, creative ideas, or
-                opportunities to be part of your vision.
+                I&apos;m always open to discussing new projects, creative ideas,
+                or opportunities to be part of your vision.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link

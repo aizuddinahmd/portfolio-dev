@@ -1,26 +1,24 @@
 export const services = [
   {
     id: "0",
-    title: "Frontend Development",
-    text: "Building responsive, modern user interfaces using React, Next.js, and TypeScript. Creating seamless user experiences with optimized performance and accessibility.",
+    title: "Marketing Automation & AI Agents",
+    text: "Custom-built AI agents and automation workflows tailored to your business.",
     features: [
-      "React & Next.js Development",
-      "Responsive Design Implementation",
-      "Performance Optimization",
-      "UI/UX Integration",
-      "Component Architecture",
+      "AI content creation & scheduling",
+      "Automated marketing workflows (social, email, reporting)",
+      "AI agents for repetitive tasks and internal operations",
+      "Tool and platform integrations via APIs",
     ],
   },
   {
     id: "1",
-    title: "Backend Development",
-    text: "Designing and implementing scalable server-side solutions with Node.js, PostgreSQL, and cloud services. Building robust APIs and database architectures.",
+    title: "Product & Platform Development",
+    text: "End-to-end development of modern, scalable systems that power your automation.",
     features: [
-      "API Development & Integration",
-      "Database Design & Management",
-      "Authentication & Authorization",
-      "Cloud Infrastructure",
-      "System Architecture",
+      "Frontend systems (React, Next.js)",
+      "Backend architecture (PostgreSQL, Supabase)",
+      "Secure authentication & role-based access",
+      "API-first and automation-ready design",
     ],
   },
   {
@@ -46,36 +44,5 @@ export const services = [
       "Analytics & Metrics",
       "Growth Experimentation",
     ],
-  },
-];
-
-export const serviceIcons = [
-  {
-    id: "0",
-    title: "Frontend",
-    icon: "💻",
-    width: 48,
-    height: 48,
-  },
-  {
-    id: "1",
-    title: "Backend",
-    icon: "⚙️",
-    width: 48,
-    height: 48,
-  },
-  {
-    id: "2",
-    title: "Design",
-    icon: "🎨",
-    width: 48,
-    height: 48,
-  },
-  {
-    id: "3",
-    title: "Growth",
-    icon: "📈",
-    width: 48,
-    height: 48,
   },
 ];
