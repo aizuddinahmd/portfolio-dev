@@ -59,17 +59,17 @@ const AboutPage = () => {
     {
       title: "Certified Associate in Prompt Engineering",
       institution: "Talentlabs",
-      date: "February",
+      date: "February 2024",
     },
     {
       title: "Data Science Bootcamp",
       institution: "Adnexio.edu",
-      date: "February",
+      date: "February 2024",
     },
     {
       title: "Full Stack Developer Bootcamp",
       institution: "Sigma School",
-      date: "August",
+      date: "August 2023",
     },
     {
       title: "Certified Smart Contract Developer",
@@ -206,26 +206,44 @@ const AboutPage = () => {
                 <Award className="w-6 h-6 text-blue-400" />
                 <h2 className="text-3xl font-bold">Certificates & Bootcamps</h2>
               </div>
-              <div className="rounded-2xl bg-gray-900 border border-white/10 p-6 md:p-8">
-                <div className="space-y-0">
-                  {certificates.map((cert, index) => (
-                    <div key={index}>
-                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 py-4">
-                        <div className="flex-1">
-                          <span className="text-white text-base md:text-lg">
-                            {cert.title} | {cert.institution}
+              <div className="space-y-4">
+                {certificates.map((cert, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                    className="rounded-2xl bg-neutral-800/30 backdrop-blur-sm border border-white/10 p-6 md:p-8"
+                  >
+                    <div className="flex gap-6">
+                      {/* Award Icon */}
+                      <div className="shrink-0">
+                        <Award className="w-6 h-6 text-teal-400" />
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex-1 flex flex-col gap-2">
+                        {/* Certificate Title */}
+                        <h3 className="text-xl md:text-2xl font-bold text-white">
+                          {cert.title}
+                        </h3>
+
+                        {/* Institution */}
+                        <p className="text-base md:text-lg text-teal-400">
+                          {cert.institution}
+                        </p>
+
+                        {/* Date */}
+                        <div className="flex items-center gap-2 mt-2">
+                          <Calendar className="w-4 h-4 text-gray-300" />
+                          <span className="text-sm text-gray-300">
+                            {cert.date}
                           </span>
                         </div>
-                        <span className="text-gray-400 text-sm md:text-base md:text-right">
-                          {cert.date}
-                        </span>
                       </div>
-                      {index < certificates.length - 1 && (
-                        <div className="border-t border-white/10" />
-                      )}
                     </div>
-                  ))}
-                </div>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -252,7 +270,7 @@ const AboutPage = () => {
                   >
                     <div className="flex gap-6">
                       {/* Graduation Cap Icon */}
-                      <div className="flex-shrink-0">
+                      <div className="shrink-0">
                         <GraduationCap className="w-6 h-6 text-teal-400" />
                       </div>
 
