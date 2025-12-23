@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import Heading from "@/components/Heading";
 import { motion } from "framer-motion";
 import Aurora from "@/components/Aurora";
+import Experience from "@/components/Experience";
 
 const AboutPage = () => {
   const aboutSections = [
@@ -145,104 +146,7 @@ const AboutPage = () => {
               </div>
             </motion.div>
           </div>
-
-          {/* Journey Timeline */}
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
-              <h2 className="text-3xl font-bold text-center mb-12">
-                My Journey
-              </h2>
-              <div className="relative">
-                {/* Timeline line */}
-                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-white/10 hidden md:block" />
-
-                <div className="space-y-12">
-                  <div className="relative flex gap-6 md:gap-8">
-                    {/* Timeline dot */}
-                    <div className="hidden md:flex items-start pt-1">
-                      <div className="relative z-10 w-16 h-16 rounded-full bg-gray-900 border-2 border-white/20 flex items-center justify-center">
-                        <span className="text-2xl">🚀</span>
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="flex-1 pb-8 md:pb-0">
-                      <div className="rounded-2xl bg-transparent backdrop-blur-sm border border-white/10 p-6 md:p-8">
-                        <div className="mb-4">
-                          <h3 className="text-2xl font-bold text-white mb-2">
-                            Technical Director
-                          </h3>
-                          <p className="text-gray-300">
-                            Skola Labs Tech Sdn Bhd | March 2025 - Ongoing
-                          </p>
-                        </div>
-                        <p className="text-gray-400 leading-6">
-                          Leading software and AI initiatives, designing system
-                          architectures, and building scalable solutions for
-                          healthcare and other industries.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="relative flex gap-6 md:gap-8">
-                    <div className="hidden md:flex items-start pt-1">
-                      <div className="relative z-10 w-16 h-16 rounded-full bg-gray-900 border-2 border-white/20 flex items-center justify-center">
-                        <span className="text-2xl">🌐</span>
-                      </div>
-                    </div>
-                    <div className="flex-1 pb-8 md:pb-0">
-                      <div className="rounded-2xl bg-transparent backdrop-blur-sm border border-white/10 p-6 md:p-8">
-                        <div className="mb-4">
-                          <h3 className="text-2xl font-bold text-white mb-2">
-                            Trust & Safety Associate
-                          </h3>
-                          <p className="text-gray-300">
-                            Accenture | June 2024 - Feb 2025
-                          </p>
-                        </div>
-                        <p className="text-gray-400 leading-6">
-                          Ensured platform safety through content moderation,
-                          maintaining 98% accuracy and contributing to AI
-                          moderation system improvements.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="relative flex gap-6 md:gap-8">
-                    <div className="hidden md:flex items-start pt-1">
-                      <div className="relative z-10 w-16 h-16 rounded-full bg-gray-900 border-2 border-white/20 flex items-center justify-center">
-                        <span className="text-2xl">💻</span>
-                      </div>
-                    </div>
-                    <div className="flex-1 pb-8 md:pb-0">
-                      <div className="rounded-2xl bg-transparent backdrop-blur-sm border border-white/10 p-6 md:p-8">
-                        <div className="mb-4">
-                          <h3 className="text-2xl font-bold text-white mb-2">
-                            Software Developer
-                          </h3>
-                          <p className="text-gray-300">
-                            Epic Startups | April 2023 - May 2024
-                          </p>
-                        </div>
-                        <p className="text-gray-400 leading-6">
-                          Developed front-end functionalities, implemented
-                          responsive designs, and collaborated with designers to
-                          create seamless user experiences.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
+          <Experience />
           {/* CTA Section */}
           <div className="max-w-4xl mx-auto mt-20 text-center">
             <motion.div

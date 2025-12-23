@@ -75,7 +75,7 @@ const Section = ({
 
 const Experience = () => {
   return (
-    <Section id="experience" className="bg-black text-white">
+    <Section id="experience" className="bg-transparent text-white">
       <div className="container mx-auto px-4 relative z-2">
         <Heading
           className="md:max-w-md lg:max-w-2xl"
