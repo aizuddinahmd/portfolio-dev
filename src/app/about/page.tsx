@@ -1,7 +1,17 @@
 "use client";
 
 import React from "react";
-import { Code, Palette, TrendingUp, Globe, Heart, Award } from "lucide-react";
+import {
+  Code,
+  Palette,
+  TrendingUp,
+  Globe,
+  Heart,
+  Award,
+  GraduationCap,
+  Calendar,
+  MapPin,
+} from "lucide-react";
 import Header from "@/components/Header";
 import Heading from "@/components/Heading";
 import { motion } from "framer-motion";
@@ -65,6 +75,21 @@ const AboutPage = () => {
       title: "Certified Smart Contract Developer",
       institution: "Blockchain Council",
       date: "May 2022",
+    },
+  ];
+
+  const education = [
+    {
+      degree: "Master of Science, Aerospace Engineering",
+      university: "University of Manchester",
+      location: "Manchester, UK",
+      period: "2020-2021",
+    },
+    {
+      degree: "Bachelor of Science, Aerospace Engineering",
+      university: "Inha University",
+      location: "Incheon, South Korea",
+      period: "2015-2019",
     },
   ];
 
@@ -201,6 +226,63 @@ const AboutPage = () => {
                     </div>
                   ))}
                 </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Education Section */}
+          <div className="max-w-4xl mx-auto mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <div className="flex items-center gap-3 mb-8">
+                <GraduationCap className="w-6 h-6 text-blue-400" />
+                <h2 className="text-3xl font-bold">Education</h2>
+              </div>
+              <div className="space-y-4">
+                {education.map((edu, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+                    className="rounded-2xl bg-neutral-800/30 backdrop-blur-sm border border-white/10 p-6 md:p-8"
+                  >
+                    <div className="flex gap-6">
+                      {/* Graduation Cap Icon */}
+                      <div className="flex-shrink-0">
+                        <GraduationCap className="w-6 h-6 text-teal-400" />
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex-1 flex flex-col gap-2">
+                        {/* Degree */}
+                        <h3 className="text-xl md:text-2xl font-bold text-white">
+                          {edu.degree}
+                        </h3>
+
+                        {/* Institution */}
+                        <p className="text-base md:text-lg text-teal-400">
+                          {edu.university}
+                        </p>
+
+                        {/* Dates and Location */}
+                        <div className="flex flex-wrap items-center gap-4 mt-2">
+                          <div className="flex items-center gap-2 text-sm text-gray-300">
+                            <Calendar className="w-4 h-4" />
+                            <span>{edu.period}</span>
+                          </div>
+                          <div className="flex items-center gap-2 text-sm text-gray-300">
+                            <MapPin className="w-4 h-4" />
+                            <span>{edu.location}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           </div>
