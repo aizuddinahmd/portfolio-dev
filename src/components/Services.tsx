@@ -109,7 +109,7 @@ const Services = () => {
         <Heading
           tag="Services"
           title="What I Do"
-          text="Comprehensive services to bring your ideas to life"
+          text="I design and build websites, marketing automation systems, and community products. I also help businesses grow through data-driven growth strategies."
         />
         <div className="relative">
           <div className="relative z-1 grid gap-5 lg:grid-cols-2 mb-5">
