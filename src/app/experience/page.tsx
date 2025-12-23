@@ -62,15 +62,6 @@ const ExperiencePage = () => {
       <Header />
       <section className="relative py-20 lg:py-24 xl:py-28 pt-32">
         <div className="container mx-auto px-4 relative z-2">
-          {/* Back Button */}
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            <span>Back to Home</span>
-          </Link>
-
           <Heading
             className="md:max-w-md lg:max-w-2xl mb-16"
             tag="Career"
