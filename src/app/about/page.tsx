@@ -148,7 +148,7 @@ const AboutPage = () => {
           </div>
           <Experience />
           {/* CTA Section */}
-          <div className="max-w-4xl mx-auto mt-20 text-center">
+          {/* <div className="max-w-4xl mx-auto mt-20 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -177,7 +177,7 @@ const AboutPage = () => {
                 </Link>
               </div>
             </motion.div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

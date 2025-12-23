@@ -52,6 +52,18 @@ const experiences = [
       "Reviewed and analyzed user-generated content in Korean language to ensure alignment with platform policies, maintaining a 98% compliance rate on Google Gemini",
     ],
   },
+  {
+    id: "4",
+    title: "Process Executive (Korean Speaker)",
+    company: "Cognizant",
+    location: "Malaysia",
+    period: "Jan 2021 - Jan 2023",
+    responsibilities: [
+      "Processed and managed business operations and workflows for Korean-speaking clients",
+      "Ensured compliance with company policies and client requirements",
+      "Maintained high quality standards in process execution and documentation",
+    ],
+  },
 ];
 
 const Section = ({
