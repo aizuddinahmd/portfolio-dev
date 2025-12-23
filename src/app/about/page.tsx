@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import { Code, Palette, TrendingUp, Globe, Heart } from "lucide-react";
-import Link from "next/link";
+import { Code, Palette, TrendingUp, Globe, Heart, Award } from "lucide-react";
 import Header from "@/components/Header";
 import Heading from "@/components/Heading";
 import { motion } from "framer-motion";
@@ -44,6 +43,29 @@ const AboutPage = () => {
     "Innovation",
     "Quality First",
     "Problem Solving",
+  ];
+
+  const certificates = [
+    {
+      title: "Certified Associate in Prompt Engineering",
+      institution: "Talentlabs",
+      date: "February",
+    },
+    {
+      title: "Data Science Bootcamp",
+      institution: "Adnexio.edu",
+      date: "February",
+    },
+    {
+      title: "Full Stack Developer Bootcamp",
+      institution: "Sigma School",
+      date: "August",
+    },
+    {
+      title: "Certified Smart Contract Developer",
+      institution: "Blockchain Council",
+      date: "May 2022",
+    },
   ];
 
   return (
@@ -147,6 +169,42 @@ const AboutPage = () => {
             </motion.div>
           </div>
           <Experience />
+
+          {/* Certificates Section */}
+          <div className="max-w-4xl mx-auto mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <div className="flex items-center gap-3 mb-8">
+                <Award className="w-6 h-6 text-blue-400" />
+                <h2 className="text-3xl font-bold">Certificates & Bootcamps</h2>
+              </div>
+              <div className="rounded-2xl bg-gray-900 border border-white/10 p-6 md:p-8">
+                <div className="space-y-0">
+                  {certificates.map((cert, index) => (
+                    <div key={index}>
+                      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 py-4">
+                        <div className="flex-1">
+                          <span className="text-white text-base md:text-lg">
+                            {cert.title} | {cert.institution}
+                          </span>
+                        </div>
+                        <span className="text-gray-400 text-sm md:text-base md:text-right">
+                          {cert.date}
+                        </span>
+                      </div>
+                      {index < certificates.length - 1 && (
+                        <div className="border-t border-white/10" />
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
           {/* CTA Section */}
           {/* <div className="max-w-4xl mx-auto mt-20 text-center">
             <motion.div
