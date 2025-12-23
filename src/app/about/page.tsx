@@ -168,86 +168,6 @@ const AboutPage = () => {
               ))}
             </div>
           </div>
-
-          {/* Values Section */}
-          <div className="max-w-4xl mx-auto mb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="rounded-2xl bg-gray-900 border border-white/10 p-8 lg:p-12"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <Heart className="w-6 h-6 text-blue-400" />
-                <h2 className="text-3xl font-bold">Core Values</h2>
-              </div>
-              <div className="flex flex-wrap gap-3">
-                {values.map((value, index) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 bg-white/5 rounded-full text-sm text-white border border-white/10"
-                  >
-                    {value}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-          <Experience />
-
-          {/* Certificates Section */}
-          <div className="max-w-4xl mx-auto mb-20">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-            >
-              <div className="flex items-center gap-3 mb-8">
-                <Award className="w-6 h-6 text-blue-400" />
-                <h2 className="text-3xl font-bold">Certificates & Bootcamps</h2>
-              </div>
-              <div className="space-y-4">
-                {certificates.map((cert, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
-                    className="rounded-2xl bg-neutral-800/30 backdrop-blur-sm border border-white/10 p-6 md:p-8"
-                  >
-                    <div className="flex gap-6">
-                      {/* Award Icon */}
-                      <div className="shrink-0">
-                        <Award className="w-6 h-6 text-teal-400" />
-                      </div>
-
-                      {/* Content */}
-                      <div className="flex-1 flex flex-col gap-2">
-                        {/* Certificate Title */}
-                        <h3 className="text-xl md:text-2xl font-bold text-white">
-                          {cert.title}
-                        </h3>
-
-                        {/* Institution */}
-                        <p className="text-base md:text-lg text-teal-400">
-                          {cert.institution}
-                        </p>
-
-                        {/* Date */}
-                        <div className="flex items-center gap-2 mt-2">
-                          <Calendar className="w-4 h-4 text-gray-300" />
-                          <span className="text-sm text-gray-300">
-                            {cert.date}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
           {/* Education Section */}
           <div className="max-w-4xl mx-auto mb-20">
             <motion.div
@@ -255,10 +175,7 @@ const AboutPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <div className="flex items-center gap-3 mb-8">
-                <GraduationCap className="w-6 h-6 text-blue-400" />
-                <h2 className="text-3xl font-bold">Education</h2>
-              </div>
+              <Heading tag="Education" title="Academic Background" />
               <div className="space-y-4">
                 {education.map((edu, index) => (
                   <motion.div
@@ -296,6 +213,86 @@ const AboutPage = () => {
                             <MapPin className="w-4 h-4" />
                             <span>{edu.location}</span>
                           </div>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Values Section */}
+          {/* <div className="max-w-4xl mx-auto mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="rounded-2xl bg-gray-900 border border-white/10 p-8 lg:p-12"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <Heart className="w-6 h-6 text-blue-400" />
+                <h2 className="text-3xl font-bold">Core Values</h2>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                {values.map((value, index) => (
+                  <span
+                    key={index}
+                    className="px-4 py-2 bg-white/5 rounded-full text-sm text-white border border-white/10"
+                  >
+                    {value}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          </div> */}
+          {/* Experience section */}
+          <Experience />
+
+          {/* Certificates Section */}
+          <div className="max-w-4xl mx-auto mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <Heading
+                tag="Continous Learning"
+                title="Certifications & Training"
+              />
+              <div className="space-y-4">
+                {certificates.map((cert, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                    className="rounded-2xl bg-neutral-800/30 backdrop-blur-sm border border-white/10 p-6 md:p-8"
+                  >
+                    <div className="flex gap-6">
+                      {/* Award Icon */}
+                      <div className="shrink-0">
+                        <Award className="w-6 h-6 text-teal-400" />
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex-1 flex flex-col gap-2">
+                        {/* Certificate Title */}
+                        <h3 className="text-xl md:text-2xl font-bold text-white">
+                          {cert.title}
+                        </h3>
+
+                        {/* Institution */}
+                        <p className="text-base md:text-lg text-teal-400">
+                          {cert.institution}
+                        </p>
+
+                        {/* Date */}
+                        <div className="flex items-center gap-2 mt-2">
+                          <Calendar className="w-4 h-4 text-gray-300" />
+                          <span className="text-sm text-gray-300">
+                            {cert.date}
+                          </span>
                         </div>
                       </div>
                     </div>
